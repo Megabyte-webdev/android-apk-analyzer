@@ -1,0 +1,22 @@
+{
+  "name": "apk-verifier",
+  "version": "1.0.0",
+  "description": "apk verifier and validator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Afowebdev",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
