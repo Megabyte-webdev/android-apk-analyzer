@@ -1,5 +1,5 @@
 import commandRunner from "../services/executor.service.js";
-import fs from "fs";
+import { unlink } from "fs/promises";
 
 export const verifyApkSignature = async (req, res) => {
   const apkPath = req.file?.path;
@@ -33,7 +33,6 @@ export const verifyApkSignature = async (req, res) => {
   } catch (err) {
     res.status(400).json({ success: false, error: err?.toString() });
   } finally {
-    // Always remove the uploaded file
-    await fs.unlink(apkPath);
+    await unlink(apkPath); // this now works ✅
   }
 };
