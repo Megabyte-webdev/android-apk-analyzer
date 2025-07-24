@@ -3,3 +3,8 @@ npm-debug.log
 Dockerfile
 .dockerignore
 .git
+.gitignore
+.env
+*.apk
+*.zip
+*.tar.gz
