@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y curl && \
 # Install Java and required tools
 RUN apt-get update && apt-get install -y openjdk-11-jdk unzip wget
 
+# Install ClamAV
+RUN apt-get update && apt-get install -y clamav clamav-daemon && \
+    freshclam
+
 # Set environment variables
 ENV ANDROID_SDK_ROOT=/opt/android-sdk
 ENV PATH="${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin:${ANDROID_SDK_ROOT}/platform-tools:${ANDROID_SDK_ROOT}/build-tools/33.0.0"
