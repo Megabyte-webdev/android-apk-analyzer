@@ -8,7 +8,6 @@ const verifyRouter = Router();
 verifyRouter.post(
   "/",
   upload.single("apk"),
-  malwareScanner,
   verifyApkSignature
 );
 
