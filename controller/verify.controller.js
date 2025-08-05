@@ -73,6 +73,10 @@ export const verifyApkSignature = async (req, res) => {
       error: err.toString(),
     });
   } finally {
-    await unlink(apkPath);
+    try {
+      if (apkPath) await unlink(apkPath);
+    } catch (err) {
+      console.error("Failed to delete APK file:", err.message);
+    }
   }
 };
